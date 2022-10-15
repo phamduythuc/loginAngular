@@ -1,0 +1,39 @@
+<div class="content">
+  <app-title [title]="titleSlide"></app-title>
+  <div class="content__button">
+    <div class="content__box">
+      <div class="search-box">
+        <button class="btn-search">
+          <img
+            src="../../../assets/img/icon/Group 15.4.png"
+            alt="click-icon"
+            class="icon-search"
+          />
+        </button>
+        <input
+          type="text"
+          value=""
+          class="input-search"
+          placeholder="Type to search"
+          (input)="onSearchHandler($event)"
+        />
+      </div>
+      <img
+        src="../../../assets/img/icon/Group-2.png"
+        alt="click-icon"
+        class="content__button--img"
+      />
+      <img
+        src="../../../assets/img/icon/Group-1.png"
+        alt="click-icon"
+        class="content__button--img"
+      />
+    </div>
+  </div>
+
+  <!-- card -->
+  <app-swiper-slide
+    [value]="valueSearch"
+    (title)="titleChange($event)"
+  ></app-swiper-slide>
+</div>

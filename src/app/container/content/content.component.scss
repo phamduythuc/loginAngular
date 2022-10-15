@@ -1,0 +1,126 @@
+:host {
+    width: 75%;
+    position: relative;
+    padding: 1.8rem 1.8rem 0 1.8rem;
+
+    background-color: rgba(#212529, .6);
+    border-top-right-radius: .8rem;
+    border-bottom-right-radius: .8rem;
+    overflow: hidden;
+    @media only screen and (max-width: 75em) {
+        margin-top: 3rem;
+        padding: 2rem 2.5rem;
+        border-radius: 1.5rem;
+    }
+    @media only screen and (max-width: 56.25em) {
+        margin-top: 3rem;
+        width: 100%;
+        padding: 2rem 2.5rem;
+        border-radius: 1.5rem;
+    }
+    @media only screen and (max-width: 42.5em) {
+        width: 100%;
+        margin-top: 2rem;
+        display: inline-block;
+        height: auto;
+        overflow: visible;
+        border-radius: 1rem;
+    }
+}
+.content {
+    overflow: hidden;
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__button {
+        position: relative;
+        display: flex;
+        margin: 2rem 0 5.3rem 0;
+        &--img {
+            cursor: pointer;
+            width: 3.2rem;
+            height: 3.2rem;
+            margin-left: 1.8rem;
+            @media only screen and (max-width: 56.25em) {
+                width: 1.8rem;
+                height: 1.8rem;
+            }
+        }
+    }
+    &__box {
+        display: inline-block;
+        position: absolute;
+        right: 0;
+    }
+}
+.search-box{
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    right: 9rem;
+  }
+  .input-search{
+    height: 3.5rem;
+    width: 3.5rem;
+    border-style: none;
+    padding: 10px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    outline: none;
+    border-radius: 25px;
+    transition: all .5s ease-in-out;
+    background-color: transparent;
+    padding-right: 40px;
+    color:#000;
+    &:hover { 
+    width: 300px;
+    background-color: transparent;
+    border-bottom:1px solid rgba(255,255,255,.5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+    }
+    &:focus{
+        width: 300px;
+        border-radius: 1rem;
+        background-color: #fff;
+        border-bottom:1px solid rgba(255,255,255,.5);
+        transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+      }
+  }
+  .btn-search{
+    width: 5rem;
+    height: 3.5rem;
+    border-style: none;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    border-radius: 2.5rem;
+    position: absolute;
+    right: 0px;
+    color:#ffffff ;
+    background-color:transparent;
+    pointer-events: painted;  
+    &:hover ~ .input-search {
+        width: 300px;
+        border-radius: 0px;
+        background-color: transparent;
+        border-bottom:1px solid rgba(255,255,255,.5);
+        transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+      } 
+      &:focus ~ .input-search{
+        width: 300px;
+        border-radius: 0px;
+        background-color: transparent;
+        border-bottom:1px solid rgba(255,255,255,.5);
+        transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+      }
+  }
+  .icon-search {
+    width: 3.5rem;
+    height: 3.5rem;
+  }   
+  .hiden {
+    display: none;
+  }

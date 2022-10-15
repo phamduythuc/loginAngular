@@ -1,0 +1,49 @@
+.header {
+    height: 6.4rem;
+    padding: 1.8rem 6.4rem 1.8rem 4rem;
+    background-color: rgba(255, 255, 255, 0.08);
+
+    @media only screen and (max-width: 42.5em) {
+        padding: 1.8rem;
+    }
+    &__box {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__logo {
+        display: flex;
+        align-items: center;
+        &--icon {
+            width: 2.4rem;
+            height: 2.4rem;
+        }
+        &--image {
+            margin-left: 2.5rem;
+            // width: 1.6rem;
+            height: 2.8rem;
+        }
+    }
+    &__infor {
+        display: flex;
+        align-items: center;
+        &--notification {
+            width: 2rem;
+            height: 1.95rem;
+        }
+    }
+    &__account {
+        display: flex;
+        align-items: center;
+        margin-left: 2.4rem;
+        &--user {
+            width: 2.8rem;
+            height: 2.8rem;
+        }
+        &--desc {
+            margin-left: .8rem;
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #FFFFFF;
+        }
+    }
+}

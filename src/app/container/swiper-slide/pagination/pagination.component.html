@@ -1,0 +1,10 @@
+<div class="button-page">
+  <button
+    *ngFor="let page of pages"
+    (click)="clickChangePage(page)"
+    [ngClass]="{ active: page === currentPage }"
+    class="button-20"
+  >
+    {{ page }}
+  </button>
+</div>

@@ -1,0 +1,21 @@
+<swiper
+  #swiper
+  [pagination]="true"
+  class="mySwiper"
+  (swiper)="onSwiper($event)"
+  (slideChange)="onSlideChange()"
+>
+  <ng-template swiperSlide>
+    <div class="flex-card">
+      <app-card
+        *ngFor="let card of cardDisplay as any"
+        [title]="card['title']"
+      ></app-card>
+    </div>
+    <app-pagination
+      [currentPage]="currentPage"
+      [totalPage]="totalPage"
+      (changePage)="clickChangePage($event)"
+    ></app-pagination>
+  </ng-template>
+</swiper>

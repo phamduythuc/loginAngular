@@ -1,0 +1,100 @@
+:host {
+    width: 18%;
+    flex: 0 0 auto;
+    background-color: #343A40;
+    border-radius: .6rem;
+    margin-bottom: 1.6rem;
+    padding-bottom: 1.6rem;
+    margin-right: 1.6rem;
+    
+    @media only screen and (max-width: 120em) {
+        width: 23%;
+        margin-right: 2rem;
+    }
+    @media only screen and (max-width: 95.2em) {
+        width: 31%;
+        margin-right: 2rem;
+    }
+    @media only screen and (max-width: 87.5em) {
+        width: 45%;
+    }
+    @media only screen and (max-width: 75em) {
+        width: 46%;
+    }
+
+    @media only screen and (max-width: 56.25em) {
+        // width: 46%;
+        &:last-child {
+            margin-right: 1.6rem;
+        }
+    }
+
+    @media only screen and (max-width: 42.5em) {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+.card {
+    
+
+    &__flex {
+        display: flex;
+        align-items: center;
+    }
+    &__label {
+        margin-top: 1.8rem;
+        display: inline-block;
+        padding: .8rem 5rem .8rem 1.8rem;
+        background-color:  rgba(52, 170, 255, 0.6);
+        span {
+            // padding: .8rem;
+            color: #fff;
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+    }
+    &__icon {
+        margin-top: 2rem;
+        padding: 0 2rem 0 1.2rem;
+        display: flex;
+        justify-content:space-between;
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: #fff;
+        @media only screen and (max-width: 120em) {
+            padding-right: 1.2rem;
+        }
+        @media only screen and (max-width: 75em) {
+            margin-top: 3rem;
+        }
+        @media only screen and (max-width: 56.25em) {
+            margin-top: 2rem;
+            padding: 0 1rem 0 1rem;
+        }
+        @media only screen and (max-width: 42.5em) {
+            padding: 0 3rem;
+        }
+        &--1 {
+            display: flex;
+            align-items: center;
+            span {
+                font-size: 1.4rem;
+                margin-left: .8rem;
+            }
+        }
+        &--1:not(:last-child) {
+            margin-right: 1.2rem;
+        }
+    }
+    &__custom {
+        margin-top: 2.7rem;
+    }
+}
+.triangle {
+    display: inline-block;
+    margin-top: 1.8rem;
+    width: 0;
+    height: 0;
+    border: 1.6rem solid;
+    border-color: transparent transparent transparent rgba(52, 170, 255, 0.6);
+}

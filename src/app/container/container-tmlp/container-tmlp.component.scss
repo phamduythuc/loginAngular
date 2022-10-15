@@ -1,0 +1,14 @@
+$bp-big: 120em;
+$bp-high: 87.5em; // 1400px
+$bp-largest: 75em;     // 1200px
+$bp-medium: 56.25em;   // 900px
+$bp-small: 42.5em;  // 600px
+.box-container {
+    width: auto;
+    padding: 0 3rem;   
+}
+
+.box-title {
+    margin: 2.5rem 0;
+}
+
