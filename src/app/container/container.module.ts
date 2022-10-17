@@ -32,7 +32,7 @@ import { TitleComponent } from './content/title/title.component';
     ContainerRoutingModule,
     SwiperModule
   ],
-  exports: [ContainerTmlpComponent]
+  exports: [ContainerTmlpComponent, SwiperSlideComponent]
 })
 export class ContainerModule { 
   

@@ -1,5 +1,5 @@
 <div class="content">
-  <app-title [title]="titleSlide"></app-title>
+  <app-title></app-title>
   <div class="content__button">
     <div class="content__box">
       <div class="search-box">
@@ -32,8 +32,5 @@
   </div>
 
   <!-- card -->
-  <app-swiper-slide
-    [value]="valueSearch"
-    (title)="titleChange($event)"
-  ></app-swiper-slide>
+  <app-swiper-slide [value]="valueSearch"></app-swiper-slide>
 </div>

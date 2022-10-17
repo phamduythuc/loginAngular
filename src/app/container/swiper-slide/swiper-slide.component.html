@@ -1,15 +1,20 @@
-<swiper
-  #swiper
-  [pagination]="true"
-  class="mySwiper"
-  (swiper)="onSwiper($event)"
-  (slideChange)="onSlideChange()"
->
+<swiper #swiper [pagination]="true" class="mySwiper">
   <ng-template swiperSlide>
+    <div class="loading" *ngIf="loading">
+      <div class="lds-hourglass"></div>
+    </div>
+    <div class="error" *ngIf="catchError">
+      <div class="seven">
+        <h1>{{ valueError }}</h1>
+      </div>
+    </div>
     <div class="flex-card">
       <app-card
         *ngFor="let card of cardDisplay as any"
-        [title]="card['title']"
+        [title]="card['name']"
+        [ram]="card['ram']"
+        [cpu]="card['cpu']"
+        [hdd]="card['hdd']"
       ></app-card>
     </div>
     <app-pagination
