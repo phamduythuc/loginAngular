@@ -4,6 +4,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContainerModule } from './container/container.module';
+import { LoginModule } from './login/login.module';
+
 
 
 
@@ -15,7 +17,10 @@ import { ContainerModule } from './container/container.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ContainerModule
+  
+    ContainerModule,
+    LoginModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

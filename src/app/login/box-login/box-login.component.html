@@ -1,0 +1,76 @@
+<div class="wapper">
+  <div class="container">
+    <div class="warp__login">
+      <form class="form" [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+        <span class="form__title">Welcome</span>
+        <div class="form__input">
+          <input
+            type="text"
+            formControlName="name"
+            class="form__input--log"
+            [ngClass]="{ up: formLogin.get('name')?.value !== '' }"
+          />
+          <span class="form__input--focus" data-placeholder="Email"></span>
+          <ng-container *ngIf="formLogin.get('name')?.touched">
+            <div
+              class="catch-error"
+              *ngIf="formLogin.controls.name.errors?.['required']"
+            >
+              Username Trống
+            </div>
+            <div
+              class="catch-error"
+              *ngIf="formLogin.controls.name.errors?.['minlength']"
+            >
+              username chưa hợp lệ tối thiểu
+              {{formLogin.controls.name.errors?.['minlength']?.['requiredLength']}}
+              ký tự
+            </div>
+          </ng-container>
+        </div>
+        <div class="form__input">
+          <input
+            type="text"
+            formControlName="pass"
+            class="form__input--log"
+            name="pass"
+            [ngClass]="{ up: formLogin.get('pass')?.value !== '' }"
+          />
+          <span class="form__input--focus" data-placeholder="Password"></span>
+          <ng-container
+            class="catch-error"
+            *ngIf="formLogin.get('pass')?.touched"
+          >
+            <div
+              class="catch-error"
+              *ngIf="formLogin.controls.pass.errors?.['required']"
+            >
+              Password Trống
+            </div>
+            <div
+              class="catch-error"
+              *ngIf="formLogin.controls.pass.errors?.['minlength']"
+            >
+              password tối thiểu 6 ký tự
+              {{formLogin.controls.pass.errors?.['minlength']?.['actualLength']}}
+              trên
+              {{formLogin.controls.pass.errors?.['minlength']?.['requiredLength']}}
+              ký tự
+            </div>
+          </ng-container>
+        </div>
+        <div class="form__button">
+          <div class="form__button--warp">
+            <div class="form__button--bg"></div>
+            <button type="submit" class="form__button--login">Login</button>
+          </div>
+        </div>
+        <div class="form__bottom">
+          <span class="form__bottom--text">Don’t have an account?</span>
+          <a href="#" class="form__bottom--signup">Sign up</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div></div>
