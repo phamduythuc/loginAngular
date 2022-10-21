@@ -12,31 +12,34 @@ import { Router } from '@angular/router';
 export class BoxLoginComponent implements OnInit {
   formLogin = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(5)]),
-    pass: new FormControl('', [Validators.required,  Validators.minLength(6)]),
+    pass: new FormControl('', [Validators.required,  Validators.minLength(5)]),
   })
-  activeRouting = false;
+  activeRouting: boolean = false;
   constructor(private user: UserLoginService , private router: Router, private check: CheckLoginService){}   
 
   ngOnInit(): void {
-    console.log(this.formLogin);
   }
   onSubmit () {
-    console.log(this.formLogin);
-
     const {name, pass} = this.formLogin.value
-   
-  
+    if (this.formLogin.valid) {
       this.user.getUser(name, pass).subscribe((reponse: any) => {
         reponse.forEach((item: any) => {
           if(item.username === name && item.password === pass) {
             this.check.userLogin();
-            console.log(this.check.activeUser)
-            console.log(item)
-            // this.router.navigate(['product'])
+            this.router.navigate(['product'])
           }
         })
       })
     }
+    
+  }
+  checkLogin() {
+    if (this.check.activeUser) {
+      this.activeRouting = false
+    }else {
+      this.activeRouting = true
+    }
+  }
   
 
 }

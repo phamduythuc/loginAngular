@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ContainerModule } from './container/container.module';
 import { LoginModule } from './login/login.module';
 
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -17,7 +18,7 @@ import { LoginModule } from './login/login.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-  
+    ReactiveFormsModule,
     ContainerModule,
     LoginModule,
     

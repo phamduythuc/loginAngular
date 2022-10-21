@@ -6,12 +6,15 @@ import { Injectable } from '@angular/core';
 export class CheckLoginService {
   constructor() { }
   
-  public activeUser = false;
-  public userLogin () {
+   activeUser = false;
+   userLogin () {
      this.activeUser = true;
   }
-  public userLogout () {
+   userLogout () {
      this.activeUser = false;
+  }
+  isLogin () {
+    return this.activeUser;
   }
 
 }

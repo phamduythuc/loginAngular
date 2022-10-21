@@ -1,0 +1,22 @@
+<div class="form__input">
+  <input
+    type="text"
+    [formControl]="control"
+    class="form__input--log"
+    [ngClass]="{ up: control.value !== '' }"
+  />
+  <span class="form__input--focus" data-placeholder="">{{ label }}</span>
+  <ng-container *ngIf="control?.touched">
+    <div class="catch-error" *ngIf="control.errors?.['required']">
+      {{ label }} Trống
+    </div>
+    <div class="catch-error" *ngIf="control.errors?.['minlength']">
+      {{ label }} chưa hợp lệ tối thiểu
+      {{control.errors?.['minlength']?.['requiredLength']}}
+      ký tự ({{control.errors?.['minlength']?.['actualLength']}}
+      trên
+      {{control.errors?.['minlength']?.['requiredLength']}}
+      ký tự)
+    </div>
+  </ng-container>
+</div>
