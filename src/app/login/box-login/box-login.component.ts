@@ -15,6 +15,7 @@ export class BoxLoginComponent implements OnInit {
     pass: new FormControl('', [Validators.required,  Validators.minLength(5)]),
   })
   activeRouting: boolean = false;
+  loginField = false;
   constructor(private user: UserLoginService , private router: Router, private check: CheckLoginService){}   
 
   ngOnInit(): void {
@@ -27,6 +28,8 @@ export class BoxLoginComponent implements OnInit {
           if(item.username === name && item.password === pass) {
             this.check.userLogin();
             this.router.navigate(['product'])
+          }else {
+            this.loginField = true
           }
         })
       })

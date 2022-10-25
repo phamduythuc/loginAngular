@@ -1,5 +1,6 @@
-import { Component, OnInit, Input,  SimpleChanges, EventEmitter, Output } from '@angular/core';
-import {CardService} from "../../card.service"
+import { Component, OnInit, Input,  SimpleChanges, EventEmitter, Output, ViewChild } from '@angular/core';
+import {CardService} from "../../card.service";
+import { ContentComponent } from '../content/content.component'; 
 // SwiperCore.use([Pagination])
 @Component({
   selector: 'app-swiper-slide',
@@ -10,6 +11,7 @@ import {CardService} from "../../card.service"
 export class SwiperSlideComponent implements OnInit {
   @Input() value:any = '';
   @Output () title: EventEmitter<string> = new EventEmitter();
+  @ViewChild (ContentComponent) elemt: any;
   perPage: number = 8;
   currentPage: number = 1;
   cardDisplay = [];
@@ -17,9 +19,11 @@ export class SwiperSlideComponent implements OnInit {
   loading: boolean = true;
   catchError:boolean = false;
   valueError:string = '';
+
   constructor(private card_service : CardService) { }
   ngOnInit(): void {
     this.renderCard();
+  
   }
   ngOnChanges (changes: SimpleChanges) {
     if (changes['value'].currentValue) {

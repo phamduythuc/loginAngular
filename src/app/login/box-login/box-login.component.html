@@ -1,8 +1,14 @@
 <div class="wapper">
+  <div class="login-loading">
+    <!-- <app-loading *ngIf="loginField"></app-loading> -->
+  </div>
   <div class="container">
     <div class="warp__login">
       <form class="form" [formGroup]="formLogin" (ngSubmit)="onSubmit()">
         <span class="form__title">Welcome</span>
+        <div class="login-field" *ngIf="loginField">
+          Tài khoản hoặc mật khẩu không chính xác.
+        </div>
         <app-input
           label="username"
           [control]="formLogin.get('name')"

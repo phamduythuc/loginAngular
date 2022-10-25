@@ -21,7 +21,6 @@ import {ReactiveFormsModule} from "@angular/forms";
     ReactiveFormsModule,
     ContainerModule,
     LoginModule,
-    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -14,7 +14,6 @@ import { PaginationComponent } from './swiper-slide/pagination/pagination.compon
 import { TitleComponent } from './content/title/title.component';
 
 
-
 @NgModule({
   declarations: [
     ContainerTmlpComponent,
@@ -30,7 +29,7 @@ import { TitleComponent } from './content/title/title.component';
   imports: [
     CommonModule,
     ContainerRoutingModule,
-    SwiperModule
+    SwiperModule,
   ],
   exports: [ContainerTmlpComponent, SwiperSlideComponent]
 })

@@ -88,6 +88,7 @@
     flex-wrap: wrap;
     justify-content: center;
     padding-top: 1.5rem;
+
     &--warp {
       width: 100%;
       display: block;
@@ -117,6 +118,7 @@
       outline: none !important;
       border: none;
       background: transparent;
+      cursor: pointer;
       font-family: "Poppins", sans-serif;
       font-size: 1.5rem;
       color: #fff;
@@ -160,30 +162,11 @@
     }
   }
 }
-.form__input--log:focus + .form__input--focus::after {
-  top: -15px;
-}
-
-.form__input--log:focus + .form__input--focus::before {
-  width: 100%;
-}
-
-.up.form__input--log + .form__input--focus::after {
-  top: -15px;
-}
-.up.form__input--log + .form__input--focus::before {
-  width: 100%;
-}
-.catch-error {
-  color: red;
-  font-size: 14px;
-}
-.form__input:has(.catch-error) {
-  border-bottom: 1px solid red;
-}
-.form__input--focus::before:has(.catch-error) {
-  background: red;
-}
 .form__button--warp:hover .form__button--bg {
   left: 0;
+}
+.login-field {
+  font-size: 14px;
+  color: red;
+  margin-bottom: 1.5rem;
 }
